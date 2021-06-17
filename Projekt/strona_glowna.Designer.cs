@@ -111,11 +111,11 @@ namespace Projekt
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(609, 24);
+            this.label1.Location = new System.Drawing.Point(613, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Tytuł: ";
+            this.label1.Text = "Tytuł:";
             // 
             // label2
             // 
