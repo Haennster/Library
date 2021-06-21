@@ -12,9 +12,12 @@ namespace Projekt
 {
     public partial class strona_glowna : Form
     {
-        public strona_glowna()
+        long id_czytelnika;
+
+        public strona_glowna(long id_czytelnika)
         {
             InitializeComponent();
+            this.id_czytelnika = id_czytelnika;
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -34,17 +37,24 @@ namespace Projekt
             title.Clear();
             author.Clear();
             category.SelectedIndex = -1;
-            if (wypozyczone.Checked == true)
-            { 
-                wypozyczone.Checked = false;
-            }
         }
 
         private void strona_glowna_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'categories.Kategorie' . Możesz go przenieść lub usunąć.
-            this.kategorieTableAdapter.Fill(this.categories.Kategorie);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'daneDataSet.Kategorie' . Możesz go przenieść lub usunąć.
+            this.kategorieTableAdapter.Fill(this.daneDataSet.Kategorie);
+            WyswietlZalogowanego();
+            category.SelectedIndex = -1;
 
+        }
+
+        public void WyswietlZalogowanego()
+        {
+            DaneEntities dane = new DaneEntities();
+            var zalogowany = from zalog in dane.Czytelnicy
+                             where zalog.id_czytelnik == id_czytelnika
+                             select new { zalog.login };
+            zalogowanylabel.Text = "Witaj: " + zalogowany.First().login;
         }
     }
 }

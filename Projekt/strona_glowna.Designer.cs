@@ -37,23 +37,28 @@ namespace Projekt
             this.title = new System.Windows.Forms.TextBox();
             this.author = new System.Windows.Forms.TextBox();
             this.category = new System.Windows.Forms.ComboBox();
-            this.wypozyczone = new System.Windows.Forms.CheckBox();
+            this.kategorieBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.daneDataSet = new Projekt.DaneDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.categories = new Projekt.categories();
             this.kategorieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kategorieTableAdapter = new Projekt.categoriesTableAdapters.KategorieTableAdapter();
+            this.kategorieTableAdapter = new Projekt.DaneDataSetTableAdapters.KategorieTableAdapter();
+            this.zalogowanylabel = new System.Windows.Forms.Label();
+            this.search_btn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // login_btn
             // 
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.login_btn.Location = new System.Drawing.Point(26, 46);
+            this.login_btn.Location = new System.Drawing.Point(24, 76);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(109, 28);
             this.login_btn.TabIndex = 3;
@@ -64,7 +69,7 @@ namespace Projekt
             // wypoz_btn
             // 
             this.wypoz_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.wypoz_btn.Location = new System.Drawing.Point(26, 12);
+            this.wypoz_btn.Location = new System.Drawing.Point(24, 42);
             this.wypoz_btn.Name = "wypoz_btn";
             this.wypoz_btn.Size = new System.Drawing.Size(109, 28);
             this.wypoz_btn.TabIndex = 4;
@@ -99,22 +104,23 @@ namespace Projekt
             // 
             // category
             // 
+            this.category.DataSource = this.kategorieBindingSource1;
+            this.category.DisplayMember = "nazwa";
             this.category.FormattingEnabled = true;
             this.category.Location = new System.Drawing.Point(662, 76);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(115, 21);
             this.category.TabIndex = 8;
             // 
-            // wypozyczone
+            // kategorieBindingSource1
             // 
-            this.wypozyczone.AutoSize = true;
-            this.wypozyczone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.wypozyczone.Location = new System.Drawing.Point(662, 103);
-            this.wypozyczone.Name = "wypozyczone";
-            this.wypozyczone.Size = new System.Drawing.Size(115, 21);
-            this.wypozyczone.TabIndex = 9;
-            this.wypozyczone.Text = "Wypożyczone";
-            this.wypozyczone.UseVisualStyleBackColor = true;
+            this.kategorieBindingSource1.DataMember = "Kategorie";
+            this.kategorieBindingSource1.DataSource = this.daneDataSet;
+            // 
+            // daneDataSet
+            // 
+            this.daneDataSet.DataSetName = "DaneDataSet";
+            this.daneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -155,19 +161,42 @@ namespace Projekt
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // categories
-            // 
-            this.categories.DataSetName = "categories";
-            this.categories.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // kategorieBindingSource
             // 
             this.kategorieBindingSource.DataMember = "Kategorie";
-            this.kategorieBindingSource.DataSource = this.categories;
+            this.kategorieBindingSource.DataSource = this.daneDataSet;
             // 
             // kategorieTableAdapter
             // 
             this.kategorieTableAdapter.ClearBeforeFill = true;
+            // 
+            // zalogowanylabel
+            // 
+            this.zalogowanylabel.AutoSize = true;
+            this.zalogowanylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.zalogowanylabel.Location = new System.Drawing.Point(19, 9);
+            this.zalogowanylabel.Name = "zalogowanylabel";
+            this.zalogowanylabel.Size = new System.Drawing.Size(70, 26);
+            this.zalogowanylabel.TabIndex = 14;
+            this.zalogowanylabel.Text = "label4";
+            // 
+            // search_btn
+            // 
+            this.search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.search_btn.Location = new System.Drawing.Point(541, 130);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(109, 28);
+            this.search_btn.TabIndex = 28;
+            this.search_btn.Text = "Szukaj";
+            this.search_btn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 198);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(753, 241);
+            this.dataGridView1.TabIndex = 29;
             // 
             // strona_glowna
             // 
@@ -175,23 +204,29 @@ namespace Projekt
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.search_btn);
+            this.Controls.Add(this.zalogowanylabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.wypozyczone);
             this.Controls.Add(this.category);
             this.Controls.Add(this.author);
             this.Controls.Add(this.title);
             this.Controls.Add(this.clear_btn);
             this.Controls.Add(this.wypoz_btn);
             this.Controls.Add(this.login_btn);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.kategorieBindingSource, "nazwa", true));
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kategorieBindingSource, "nazwa", true));
             this.Name = "strona_glowna";
             this.Text = "Strona Główna";
             this.Load += new System.EventHandler(this.strona_glowna_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,13 +240,16 @@ namespace Projekt
         private System.Windows.Forms.TextBox title;
         private System.Windows.Forms.TextBox author;
         private System.Windows.Forms.ComboBox category;
-        private System.Windows.Forms.CheckBox wypozyczone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private categories categories;
+        private DaneDataSet daneDataSet;
         private System.Windows.Forms.BindingSource kategorieBindingSource;
-        private categoriesTableAdapters.KategorieTableAdapter kategorieTableAdapter;
+        private DaneDataSetTableAdapters.KategorieTableAdapter kategorieTableAdapter;
+        private System.Windows.Forms.BindingSource kategorieBindingSource1;
+        private System.Windows.Forms.Label zalogowanylabel;
+        private System.Windows.Forms.Button search_btn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

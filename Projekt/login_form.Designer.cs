@@ -101,7 +101,7 @@ namespace Projekt
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(304, 32);
-            this.password.TabIndex = 7;
+            this.password.TabIndex = 10;
             // 
             // exit_btn
             // 

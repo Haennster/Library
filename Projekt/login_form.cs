@@ -40,7 +40,44 @@ namespace Projekt
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            error_label.Show();
+            using (DaneEntities database = new DaneEntities())
+            {
+                var czytelnik = from user in database.Czytelnicy
+                                where user.login == login.Text && user.haslo == password.Text
+                                select new { user.id_czytelnik, user.login, user.haslo, user.email };
+
+
+                var pracownik = from admin in database.Pracownicy
+                                where admin.login == login.Text &&
+                                      admin.haslo == password.Text
+                                select new { admin.id_pracownik, admin.login, admin.haslo };
+
+                if (pracownik.Any())
+                {
+                    //AdminPanel main = new AdminPanel((long)pracownik.First().id_pracownik);
+                    //this.Close();
+                    //main.Show();
+                    //TODO: Dialog "Zalogowano pomyślnie"
+                    //main.ShowDialog();
+                    login.Text = "";
+                    password.Text = "";
+                }
+                else if (czytelnik.Any())
+                {
+                    strona_glowna main = new strona_glowna((long)czytelnik.First().id_czytelnik);
+                    this.Close();
+                    main.Show();
+                    //TODO: Dialog "Zalogowano pomyślnie"
+                    //main.ShowDialog();
+                    login.Text = "";
+                    password.Text = "";
+                }
+                else
+                {
+                    password.Text = "";
+                    error_label.Show();
+                }
+            }
         }
     }
 }

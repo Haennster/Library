@@ -91,6 +91,7 @@ namespace Projekt
             this.register.TabIndex = 8;
             this.register.Text = "Zarejestruj";
             this.register.UseVisualStyleBackColor = true;
+            this.register.Click += new System.EventHandler(this.register_Click);
             // 
             // rej_zaloguj
             // 

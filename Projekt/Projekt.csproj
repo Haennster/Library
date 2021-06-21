@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publikuj\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -70,16 +70,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="categories.Designer.cs">
+    <Compile Include="Autorzy.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Czytelnicy.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DaneDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>categories.xsd</DependentUpon>
+      <DependentUpon>DaneDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DaneProjekt.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DaneProjekt.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DaneProjekt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DaneProjekt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DaneProjekt.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorie.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiazki.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
     <Compile Include="login_form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login_form.Designer.cs">
       <DependentUpon>login_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pracownicy.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +118,9 @@
     </Compile>
     <Compile Include="rejestracja.Designer.cs">
       <DependentUpon>rejestracja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
     <Compile Include="strona_glowna.cs">
       <SubType>Form</SubType>
@@ -100,6 +133,12 @@
     </Compile>
     <Compile Include="strona_glowna_guest.Designer.cs">
       <DependentUpon>strona_glowna_guest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wydawnictwa.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wypozyczenia.cs">
+      <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="login_form.resx">
       <DependentUpon>login_form.cs</DependentUpon>
@@ -122,16 +161,23 @@
     <EmbeddedResource Include="strona_glowna_guest.resx">
       <DependentUpon>strona_glowna_guest.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="categories.xsc">
-      <DependentUpon>categories.xsd</DependentUpon>
+    <EntityDeploy Include="DaneProjekt.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DaneProjekt.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DaneDataSet.xsc">
+      <DependentUpon>DaneDataSet.xsd</DependentUpon>
     </None>
-    <None Include="categories.xsd">
+    <None Include="DaneDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>categories.Designer.cs</LastGenOutput>
+      <LastGenOutput>DaneDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="categories.xss">
-      <DependentUpon>categories.xsd</DependentUpon>
+    <None Include="DaneDataSet.xss">
+      <DependentUpon>DaneDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DaneProjekt.edmx.diagram">
+      <DependentUpon>DaneProjekt.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -151,15 +197,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projekt.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Projekt_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Projekt.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 i x64%29</ProductName>
@@ -170,6 +207,25 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dane.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DaneProjekt.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DaneProjekt.edmx</DependentUpon>
+      <LastGenOutput>DaneProjekt.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DaneProjekt.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DaneProjekt.edmx</DependentUpon>
+      <LastGenOutput>DaneProjekt.cs</LastGenOutput>
+    </Content>
+    <Content Include="Dane_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>Dane.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
