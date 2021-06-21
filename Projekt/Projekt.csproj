@@ -70,11 +70,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Panel.Designer.cs">
+      <DependentUpon>Admin_Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autorzy.cs">
       <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
     <Compile Include="Czytelnicy.cs">
       <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="czytelnicy_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="czytelnicy_form.Designer.cs">
+      <DependentUpon>czytelnicy_form.cs</DependentUpon>
     </Compile>
     <Compile Include="DaneDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -102,6 +114,12 @@
     <Compile Include="Ksiazki.cs">
       <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
+    <Compile Include="ksiazki_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ksiazki_form.Designer.cs">
+      <DependentUpon>ksiazki_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="login_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +128,12 @@
     </Compile>
     <Compile Include="Pracownicy.cs">
       <DependentUpon>DaneProjekt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pracownicy_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pracownicy_form.Designer.cs">
+      <DependentUpon>pracownicy_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,8 +164,38 @@
     <Compile Include="Wypozyczenia.cs">
       <DependentUpon>DaneProjekt.tt</DependentUpon>
     </Compile>
+    <Compile Include="wypozyczenia_user_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wypozyczenia_user_form.Designer.cs">
+      <DependentUpon>wypozyczenia_user_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wypozycz_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wypozycz_form.Designer.cs">
+      <DependentUpon>wypozycz_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="zwroc_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zwroc_form.Designer.cs">
+      <DependentUpon>zwroc_form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin_Panel.resx">
+      <DependentUpon>Admin_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="czytelnicy_form.resx">
+      <DependentUpon>czytelnicy_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ksiazki_form.resx">
+      <DependentUpon>ksiazki_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login_form.resx">
       <DependentUpon>login_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pracownicy_form.resx">
+      <DependentUpon>pracownicy_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -160,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="strona_glowna_guest.resx">
       <DependentUpon>strona_glowna_guest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wypozyczenia_user_form.resx">
+      <DependentUpon>wypozyczenia_user_form.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DaneProjekt.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

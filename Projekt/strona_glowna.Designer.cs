@@ -189,6 +189,7 @@ namespace Projekt
             this.search_btn.TabIndex = 28;
             this.search_btn.Text = "Szukaj";
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // dataGridView1
             // 

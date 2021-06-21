@@ -54,9 +54,9 @@ namespace Projekt
 
                 if (pracownik.Any())
                 {
-                    //AdminPanel main = new AdminPanel((long)pracownik.First().id_pracownik);
-                    //this.Close();
-                    //main.Show();
+                    Admin_Panel main = new Admin_Panel((long)pracownik.First().id_pracownik);
+                    this.Close();
+                    main.Show();
                     //TODO: Dialog "Zalogowano pomyślnie"
                     //main.ShowDialog();
                     login.Text = "";
