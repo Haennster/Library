@@ -31,12 +31,12 @@ namespace Projekt
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(strona_glowna));
             this.login_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.wypoz_btn = new System.Windows.Forms.Button();
+            this.clear_btn = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.TextBox();
+            this.author = new System.Windows.Forms.TextBox();
+            this.category = new System.Windows.Forms.ComboBox();
+            this.wypozyczone = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@ namespace Projekt
             // login_btn
             // 
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.login_btn.Location = new System.Drawing.Point(26, 92);
+            this.login_btn.Location = new System.Drawing.Point(26, 46);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(109, 28);
             this.login_btn.TabIndex = 3;
@@ -55,58 +55,60 @@ namespace Projekt
             this.login_btn.UseVisualStyleBackColor = true;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
-            // button1
+            // wypoz_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(26, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Wypożyczenia";
-            this.button1.UseVisualStyleBackColor = true;
+            this.wypoz_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.wypoz_btn.Location = new System.Drawing.Point(26, 12);
+            this.wypoz_btn.Name = "wypoz_btn";
+            this.wypoz_btn.Size = new System.Drawing.Size(109, 28);
+            this.wypoz_btn.TabIndex = 4;
+            this.wypoz_btn.Text = "Wypożyczenia";
+            this.wypoz_btn.UseVisualStyleBackColor = true;
+            this.wypoz_btn.Click += new System.EventHandler(this.wypoz_btn_Click);
             // 
-            // button2
+            // clear_btn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(26, 58);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 28);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Czyść filtry";
-            this.button2.UseVisualStyleBackColor = true;
+            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.clear_btn.Location = new System.Drawing.Point(662, 130);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(115, 28);
+            this.clear_btn.TabIndex = 5;
+            this.clear_btn.Text = "Czyść filtry";
+            this.clear_btn.UseVisualStyleBackColor = true;
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
-            // textBox1
+            // title
             // 
-            this.textBox1.Location = new System.Drawing.Point(662, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 6;
+            this.title.Location = new System.Drawing.Point(662, 24);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(115, 20);
+            this.title.TabIndex = 6;
             // 
-            // textBox2
+            // author
             // 
-            this.textBox2.Location = new System.Drawing.Point(662, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 20);
-            this.textBox2.TabIndex = 7;
+            this.author.Location = new System.Drawing.Point(662, 50);
+            this.author.Name = "author";
+            this.author.Size = new System.Drawing.Size(115, 20);
+            this.author.TabIndex = 7;
             // 
-            // comboBox1
+            // category
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(662, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(115, 21);
-            this.comboBox1.TabIndex = 8;
+            this.category.FormattingEnabled = true;
+            this.category.Location = new System.Drawing.Point(662, 76);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(115, 21);
+            this.category.TabIndex = 8;
             // 
-            // checkBox1
+            // wypozyczone
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(662, 103);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 21);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Wypożyczone";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.wypozyczone.AutoSize = true;
+            this.wypozyczone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.wypozyczone.Location = new System.Drawing.Point(662, 103);
+            this.wypozyczone.Name = "wypozyczone";
+            this.wypozyczone.Size = new System.Drawing.Size(115, 21);
+            this.wypozyczone.TabIndex = 9;
+            this.wypozyczone.Text = "Wypożyczone";
+            this.wypozyczone.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -157,12 +159,12 @@ namespace Projekt
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.wypozyczone);
+            this.Controls.Add(this.category);
+            this.Controls.Add(this.author);
+            this.Controls.Add(this.title);
+            this.Controls.Add(this.clear_btn);
+            this.Controls.Add(this.wypoz_btn);
             this.Controls.Add(this.login_btn);
             this.Name = "strona_glowna";
             this.Text = "Strona Główna";
@@ -175,12 +177,12 @@ namespace Projekt
         #endregion
 
         private System.Windows.Forms.Button login_btn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button wypoz_btn;
+        private System.Windows.Forms.Button clear_btn;
+        private System.Windows.Forms.TextBox title;
+        private System.Windows.Forms.TextBox author;
+        private System.Windows.Forms.ComboBox category;
+        private System.Windows.Forms.CheckBox wypozyczone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

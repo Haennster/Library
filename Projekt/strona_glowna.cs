@@ -23,5 +23,15 @@ namespace Projekt
             login.Show();
             this.Close();
         }
+
+        private void wypoz_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clear_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

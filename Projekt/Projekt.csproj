@@ -75,6 +75,12 @@
     <Compile Include="strona_glowna.Designer.cs">
       <DependentUpon>strona_glowna.cs</DependentUpon>
     </Compile>
+    <Compile Include="strrona_glowna_guest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="strrona_glowna_guest.Designer.cs">
+      <DependentUpon>strrona_glowna_guest.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="login_form.resx">
       <DependentUpon>login_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="strona_glowna.resx">
       <DependentUpon>strona_glowna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strrona_glowna_guest.resx">
+      <DependentUpon>strrona_glowna_guest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
