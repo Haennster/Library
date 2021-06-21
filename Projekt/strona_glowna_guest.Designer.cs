@@ -29,6 +29,7 @@ namespace Projekt
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(strona_glowna_guest));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,11 +37,16 @@ namespace Projekt
             this.label1 = new System.Windows.Forms.Label();
             this.wypozyczone = new System.Windows.Forms.CheckBox();
             this.category = new System.Windows.Forms.ComboBox();
+            this.kategorieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categories = new Projekt.categories();
             this.author = new System.Windows.Forms.TextBox();
             this.title = new System.Windows.Forms.TextBox();
             this.clear_btn = new System.Windows.Forms.Button();
-            this.login_btn = new System.Windows.Forms.Button();
+            this.exit_btn = new System.Windows.Forms.Button();
+            this.kategorieTableAdapter = new Projekt.categoriesTableAdapters.KategorieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categories)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -95,11 +101,23 @@ namespace Projekt
             // 
             // category
             // 
+            this.category.DataSource = this.kategorieBindingSource;
+            this.category.DisplayMember = "nazwa";
             this.category.FormattingEnabled = true;
             this.category.Location = new System.Drawing.Point(664, 75);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(115, 21);
             this.category.TabIndex = 19;
+            // 
+            // kategorieBindingSource
+            // 
+            this.kategorieBindingSource.DataMember = "Kategorie";
+            this.kategorieBindingSource.DataSource = this.categories;
+            // 
+            // categories
+            // 
+            this.categories.DataSetName = "categories";
+            this.categories.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // author
             // 
@@ -124,22 +142,29 @@ namespace Projekt
             this.clear_btn.TabIndex = 16;
             this.clear_btn.Text = "Czyść filtry";
             this.clear_btn.UseVisualStyleBackColor = true;
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
-            // login_btn
+            // exit_btn
             // 
-            this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.login_btn.Location = new System.Drawing.Point(26, 12);
-            this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(109, 28);
-            this.login_btn.TabIndex = 14;
-            this.login_btn.Text = "Wyloguj";
-            this.login_btn.UseVisualStyleBackColor = true;
+            this.exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.exit_btn.Location = new System.Drawing.Point(26, 12);
+            this.exit_btn.Name = "exit_btn";
+            this.exit_btn.Size = new System.Drawing.Size(109, 28);
+            this.exit_btn.TabIndex = 14;
+            this.exit_btn.Text = "Wyjdź";
+            this.exit_btn.UseVisualStyleBackColor = true;
+            this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
+            // 
+            // kategorieTableAdapter
+            // 
+            this.kategorieTableAdapter.ClearBeforeFill = true;
             // 
             // strona_glowna_guest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -149,10 +174,13 @@ namespace Projekt
             this.Controls.Add(this.author);
             this.Controls.Add(this.title);
             this.Controls.Add(this.clear_btn);
-            this.Controls.Add(this.login_btn);
+            this.Controls.Add(this.exit_btn);
             this.Name = "strona_glowna_guest";
             this.Text = "strona_glowna_guest";
+            this.Load += new System.EventHandler(this.strona_glowna_guest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +197,9 @@ namespace Projekt
         private System.Windows.Forms.TextBox author;
         private System.Windows.Forms.TextBox title;
         private System.Windows.Forms.Button clear_btn;
-        private System.Windows.Forms.Button login_btn;
+        private System.Windows.Forms.Button exit_btn;
+        private categories categories;
+        private System.Windows.Forms.BindingSource kategorieBindingSource;
+        private categoriesTableAdapters.KategorieTableAdapter kategorieTableAdapter;
     }
 }

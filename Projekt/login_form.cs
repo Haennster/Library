@@ -33,7 +33,7 @@ namespace Projekt
 
         private void guest_btn_Click(object sender, EventArgs e)
         {
-            strona_glowna main = new strona_glowna();
+            strona_glowna_guest main = new strona_glowna_guest();
             main.Show();
             this.Close();
         }

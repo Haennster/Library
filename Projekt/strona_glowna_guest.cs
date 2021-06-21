@@ -16,5 +16,30 @@ namespace Projekt
         {
             InitializeComponent();
         }
+
+
+
+        private void strona_glowna_guest_Load(object sender, EventArgs e)
+        {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'categories.Kategorie' . Możesz go przenieść lub usunąć.
+            this.kategorieTableAdapter.Fill(this.categories.Kategorie);
+
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void clear_btn_Click(object sender, EventArgs e)
+        {
+            title.Clear();
+            author.Clear();
+            category.SelectedIndex = -1;
+            if (wypozyczone.Checked == true)
+            {
+                wypozyczone.Checked = false;
+            }
+        }
     }
 }

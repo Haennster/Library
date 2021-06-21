@@ -33,7 +33,6 @@ namespace Projekt
             this.rej_haslo = new System.Windows.Forms.TextBox();
             this.rej_email = new System.Windows.Forms.TextBox();
             this.rej_phone = new System.Windows.Forms.TextBox();
-            this.rej_bd = new System.Windows.Forms.TextBox();
             this.register = new System.Windows.Forms.Button();
             this.rej_zaloguj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@ namespace Projekt
             this.label5 = new System.Windows.Forms.Label();
             this.rej_conf_haslo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // rej_login
@@ -81,15 +81,6 @@ namespace Projekt
             this.rej_phone.Name = "rej_phone";
             this.rej_phone.Size = new System.Drawing.Size(304, 32);
             this.rej_phone.TabIndex = 4;
-            // 
-            // rej_bd
-            // 
-            this.rej_bd.AcceptsTab = true;
-            this.rej_bd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.rej_bd.Location = new System.Drawing.Point(205, 226);
-            this.rej_bd.Name = "rej_bd";
-            this.rej_bd.Size = new System.Drawing.Size(304, 32);
-            this.rej_bd.TabIndex = 5;
             // 
             // register
             // 
@@ -182,12 +173,21 @@ namespace Projekt
             this.label6.TabIndex = 15;
             this.label6.Text = "Potwierdź hasło:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.dateTimePicker1.Location = new System.Drawing.Point(205, 226);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(304, 32);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
             // rejestracja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 397);
             this.ControlBox = false;
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rej_conf_haslo);
             this.Controls.Add(this.label5);
@@ -197,7 +197,6 @@ namespace Projekt
             this.Controls.Add(this.label1);
             this.Controls.Add(this.register);
             this.Controls.Add(this.rej_zaloguj);
-            this.Controls.Add(this.rej_bd);
             this.Controls.Add(this.rej_phone);
             this.Controls.Add(this.rej_email);
             this.Controls.Add(this.rej_haslo);
@@ -216,7 +215,6 @@ namespace Projekt
         private System.Windows.Forms.TextBox rej_haslo;
         private System.Windows.Forms.TextBox rej_email;
         private System.Windows.Forms.TextBox rej_phone;
-        private System.Windows.Forms.TextBox rej_bd;
         private System.Windows.Forms.Button register;
         private System.Windows.Forms.Button rej_zaloguj;
         private System.Windows.Forms.Label label1;
@@ -226,5 +224,6 @@ namespace Projekt
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox rej_conf_haslo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

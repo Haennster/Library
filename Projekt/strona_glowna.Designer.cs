@@ -29,6 +29,7 @@ namespace Projekt
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(strona_glowna));
             this.login_btn = new System.Windows.Forms.Button();
             this.wypoz_btn = new System.Windows.Forms.Button();
@@ -41,7 +42,12 @@ namespace Projekt
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.categories = new Projekt.categories();
+            this.kategorieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kategorieTableAdapter = new Projekt.categoriesTableAdapters.KategorieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // login_btn
@@ -149,6 +155,20 @@ namespace Projekt
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // categories
+            // 
+            this.categories.DataSetName = "categories";
+            this.categories.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kategorieBindingSource
+            // 
+            this.kategorieBindingSource.DataMember = "Kategorie";
+            this.kategorieBindingSource.DataSource = this.categories;
+            // 
+            // kategorieTableAdapter
+            // 
+            this.kategorieTableAdapter.ClearBeforeFill = true;
+            // 
             // strona_glowna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,7 +188,10 @@ namespace Projekt
             this.Controls.Add(this.login_btn);
             this.Name = "strona_glowna";
             this.Text = "Strona Główna";
+            this.Load += new System.EventHandler(this.strona_glowna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorieBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +210,8 @@ namespace Projekt
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private categories categories;
+        private System.Windows.Forms.BindingSource kategorieBindingSource;
+        private categoriesTableAdapters.KategorieTableAdapter kategorieTableAdapter;
     }
 }
